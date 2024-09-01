@@ -1,0 +1,791 @@
+\documentclass[12pt]{article} % use the article class
+
+\input{preamble/inputs}
+\input{Computation/preamble-computation}
+\usepackage{pifont}
+\usepackage{subfiles} % Best loaded last in the preamble
+
+\newcommand{\hmwkTitle}{Theorems \& Definitions}
+\rhead{\hmwkTitle}
+\lhead{\hmwkClass}
+
+% Custom command for theorems and definitions with page numbers
+\newcommand{\theoremitem}[3]{\item #1 \quad #2 \dotfill #3}
+\newcommand{\noteitem}[1]{\item \textit{NOTE\quad #1}}
+
+\newenvironment{theoremlist} {
+    \begin{enumerate}[nosep,leftmargin=*,label={}]
+} {
+    \end{enumerate}
+}
+
+\setlength\multicolsep{3pt}
+
+
+\begin{document}
+
+\subsection{Chapter 0 - Introduction (Skipped)}
+
+\subsection{Chapter 1 - Regular Languages}
+\begin{theoremlist}
+    \theoremitem{Theorem 1.39}
+    {Every NFA has an equivalent DFA}
+    {pg. 55}
+    \theoremitem{Theorem 1.45 - 1.49}
+    {Regular languages closure properties}
+    {pg. 59}
+    \theoremitem{Theorem 1.54}
+    {A language is regular iff some regular expression describes it}
+    {pg. 66}
+    \theoremitem{Example 1.73 - 1.77}
+    {Non-regular languages examples}
+    {pg. 80-82}
+    \begin{multicols}{2}
+    \begin{itemize}[nosep]
+        \item {$\cbracket{0^n 1^n \where n \geq 0}$}
+        \item {$\cbracket{w \where w \text{ has an equal number of $0$s and $1$s}}$}
+        \item {$\cbracket{ww \where w \in \cbracket{0,1}^*}$}
+        \item {$\cbracket{1^{n^2} \where n \geq 0}$}
+        \item {$\cbracket{0^i 1^j \where i > j}$}
+    \end{itemize}
+    \end{multicols}
+    \noteitem{More examples are given under {\normalfont EXERCISES} and {\normalfont PROBLEMS}, pg. 83 - 93 in the book.}
+\end{theoremlist}
+
+
+
+
+\subsection{Chapter 2 - Context-Free Languages}
+\begin{theoremlist}
+    \theoremitem{Definition 2.8}
+    {\textbf{Chomsky normal form} of context-free grammars}
+    {pg. 109}
+    \theoremitem{Example 2.14 - 2.18}
+    {Context-free languages examples}
+    {pg. 114-116}
+    \begin{multicols}{2}
+    \begin{itemize}[nosep]
+        \item {$\cbracket{0^n 1^n \where n \geq 0}$}
+        \item {$\cbracket{a^i b^j c^k \where i,j,k \geq 0 \text{ and } i=j \text{ or } i=k}$}
+        \item {$\cbracket{ww^r \where w \in \cbracket{0,1}^*}$}
+    \end{itemize}
+    \end{multicols}
+    \theoremitem{Theorem 2.20}
+    {A language is context free iff some PDA recognizes it}
+    {pg. 117}
+    \theoremitem{Example 2.36 - 2.38}
+    {Non-context-free languages examples (diagrams)}
+    {pg. 128-129}
+    \begin{multicols}{2}
+    \begin{itemize}[nosep]
+        \item {$\cbracket{a^n b^n c^n \where n \geq 0}$}
+        \item {$\cbracket{a^i b^j c^k \where 0 \leq i \leq j \leq k}$}
+        \item {$\cbracket{ww \where w \in \cbracket{0,1}^*}$}
+    \end{itemize}
+    \end{multicols}
+    \noteitem{More examples are given under {\normalfont EXERCISES} and {\normalfont PROBLEMS}, pg. 154 - 159.}
+\end{theoremlist}
+
+
+
+
+\subsection{Chapter 3 - The Church-Turing Thesis}
+\begin{theoremlist}
+    \theoremitem{Definition 3.3 - 3.6}
+    {\textbf{Turing machine}, recognizable and decidable definitions}
+    {pg. 168}
+    \theoremitem{Example 3.7 - 3.12}
+    {Turing machines examples (with diagrams)}
+    {pg. 171-175}
+    \begin{itemize}[nosep]
+        \item {$\cbracket{0^{2^n} \where n \geq 0}$}
+        \item {$\cbracket{w\#w \where w \in \cbracket{0,1}^*}$}
+        \item {$\cbracket{a^i b^j c^k \where i\times j = k \text{ and } i,j,k \geq 1}$}
+        \item {$\cbracket{\#x_1\#x_2\#\cdots\#x_l \where
+        \text{each } x_i \in \cbracket{0,1}^* \text{ and } x_i\neq x_j \text{ for each } i \neq j}$}
+        \item {$\cbracket{w \where w \text{ contains an equal number of 0s and 1s}}$ \textit{(proof on pg. 191)}}
+    \end{itemize}
+    \theoremitem{Theorem 3.13 - 3.19}
+    {Turing machines variants equivalence}
+    {pg. 176-180}
+    \begin{itemize}[nosep]
+        \item {Multitape $\equiv$ single-tape}
+        \item {Nondeterministic $\equiv$ deterministic}
+    \end{itemize}
+    \theoremitem{Figure 3.20}
+    {Description of an \textbf{enumerator}}
+    {pg. 180}
+    \theoremitem{Theorem 3.21}
+    {A language is Turing-recognizable iff it's enumerated}
+    {pg. 181}
+    \theoremitem{\textbf{Hilbert’s problem}}
+    {$\cbracket{p \where p \text{ has an integral root }}$ is recognizable, but not decidable}
+    {pg. 184}
+    \theoremitem{Example 3.23}
+    {$\cbracket{\abracket{G} \where G \text{ is a connected undirected graph }}$ is decidable}
+    {pg. 185}
+
+    \item[]
+    \theoremitem{EXERCISES}
+    {Useful theorems, unproved unless otherwise noted}
+    {pg. 188-190}
+    \begin{itemize}[nosep]
+        \item[] Note: items with an \texttt{A} symbol instead of a $\bullet$ symbol have a proof on page 191
+        \item 2-PDAs are more powerful than 1-PDAs
+        \item 3-PDAs are NOT more powerful than 2-PDAs
+        \item[\texttt{A}] Variant: write-once Turing machine
+        \item Variant: Turing machine with doubly infinite tape
+        \item Variant: Turing machine with left reset
+        \item Variant: Turing machine with stay put instead of left
+        \item A language can be recognized by a deterministic queue automaton iff the language is Turing-recognizable
+        \item[\texttt{A}] Decidable languages closure properties
+        \item[\texttt{A}] Recognizable languages closure properties
+        \noteitem{Turing-recognizable languages are NOT closed under complement! Very useful.}
+    \end{itemize}
+
+    \item[]
+    \item[]
+    \textbf{STUDY GUIDE}'s theorems. \textit{Note: page numbers refer to the study guide, not to the book.}
+    \theoremitem{Example}
+    {Enumerator of $\cbracket{0^k 1^k \where k \geq 0}$}
+    {pg. 17}
+    \theoremitem{Exercise 1.9a}
+    {Every finite language is decidable}
+    {pg. 19}
+\end{theoremlist}
+
+
+
+
+\subsection{Chapter 4 - Decidability}
+\begin{theoremlist}
+    \theoremitem{Theorem 4.1 - 4.23}
+    {Common languages \& decidabilities}
+    {pg. 194-210}
+    \begin{multicols}{2}
+    \begin{itemize}[nosep]
+        % decidable
+        \item $\alang{DFA}$  is decidable 
+        \item $\alang{NFA}$  is decidable 
+        \item $\alang{REX}$  is decidable 
+        \item $\eqlang{DFA}$ is decidable
+        \item $\alang{CFG}$  is decidable 
+        \item $\elang{CFG}$  is decidable 
+        \item Every context-free language is decidable
+        % undecidable
+        \item $\eqlang{CFG}$ is NOT decidable
+        \item $\alang{TM}$ is NOT decidable 
+        \item $\overline{\alang{TM}}$ is NOT Turing-recognizable 
+    \end{itemize}
+    \end{multicols}
+    \theoremitem{Figure 4.10}
+    {\textbf{$\text{regular}\subset\text{context-free}\subset\text{decidable}\subset\text{Turing-recognizable}$}}
+    {pg. 201}
+    \theoremitem{The diagonalization method}
+    {}
+    {pg. 202}
+    \theoremitem{Theorem 4.22}
+    {A language is decidable iff it is recognizable and co-recognizable}
+    {pg. 209}
+
+    % \item[] % no need because it's a beginning of a page
+    \theoremitem{EXERCISES}
+    {All of the languages below are \textbf{decidable}}
+    {pg. 211-214}
+    % \\Items with an \texttt{A} symbol instead of a $\bullet$ symbol have a proof on page 214.
+    \begin{itemize}[nosep]
+        \item[] Note: items with an \texttt{A} symbol instead of a $\bullet$ symbol have a proof on page 214.
+        \item $\alllang{DFA}$
+        \item $\cbracket{\abracket{G} \where G \text{ is a CFG that generates } \varepsilon}$
+        \item $\genlang{INFINITE}{DFA}=\cbracket{\abracket{A} \where A \text{ is a DFA and $L(A)$ is an infinite language}}$
+        \item $\genlang{INFINITE}{PDA}=\cbracket{\abracket{M} \where M \text{ is a PDA and $L(M)$ is an infinite language}}$
+        \item[\texttt{A}] $\cbracket{\abracket{M} \where M \text{ is a DFA that doesn’t accept any string containing an odd numbers of 1s }}$
+        \item $\cbracket{\abracket{R,S} \where R \text{ and } S \text{ are regular expressions and } L(R)\subseteq L(S)}$
+        \item[\texttt{A}] $\cbracket{\abracket{G} \where G \text{ is a CFG over } \cbracket{0,1} \text{ and } 1^* \cap L(G) \neq \phi}$
+        \item $\cbracket{\abracket{G} \where G \text{ is a CFG over } \cbracket{0,1} \text{ and } 1^* \subseteq L(G)}$
+        \item $\cbracket{\abracket{M} \where M \text{ is a DFA that accepts $w^R$ whenever it accepts $w$}}$
+        \item[\texttt{A}] Say that an NFA is \emph{\textbf{ambiguous}} if it accepts some string along two different computation branches.
+        $\genlang{AMBIG}{NFA}=\cbracket{\abracket{N} \where N \text{ is an ambiguous NFA}}$ is decidable
+        \item[\texttt{A}] $\genlang{BAL}{DFA}=\cbracket{\abracket{M} \where M \text{ is a DFA that accepts strings with an equal number of 0s and 1s}}$
+        \item $\genlang{PAL}{DFA}=\cbracket{\abracket{M} \where M \text{ is a DFA that accepts palindromes}}$
+        \item $\cbracket{\abracket{M} \where M \text{ is a DFA that accepts strings with more 1s than 0s}}$
+        \item $\cbracket{\abracket{G,x} \where G \text{ is a CFG and $x$ is a substring of some } y\in L(G)}$
+        \item $\cbracket{\abracket{G,k} \where G \text{ is a CFG and L(G) contains exactly $k$ strings where $k \geq 0$ or } k = \infty}$
+    \end{itemize}
+
+    \theoremitem{Problem 4.5}
+    {$\overline{\elang{TM}}$ is recognizable \textit{(proof on pg. 213)}}
+    {pg. 211}
+    \theoremitem{Problem 4.18}
+    {Let $C$ a language. $C$ is Turing-recognizable iff a decidable language $D$ exists such that
+    $\mathbf{C = \cbracket{x \where \exists y \bracket{\abracket{x,y}\in D}}}$}
+    {pg. 212}
+    \theoremitem{Problem 4.19}
+    {The class of decidable languages is \textbf{NOT closed} under homomorphism}
+    {pg. 212}
+    
+    \item[]
+    \item[]
+    \textbf{STUDY GUIDE}'s theorems. \textit{Note: page numbers refer to the study guide, not to the book.}
+    \theoremitem{Exercise 2.6}
+    {If $G$ is a CFG in \textit{\textbf{Chomsky's normal form}}, and $w\in L(G)$ is a word of length $n>0$, then every derivation of $w$ has exactly $2n-1$ steps}
+    {pg. 28}
+    \theoremitem{Claim}
+    {$L$ and $\overline{L}$ are both Turing-recognizable iff $L$ is decidable}
+    {pg. 32}
+\end{theoremlist}
+
+
+
+
+
+\subsection{Chapter 5 - Reducibility}
+\begin{theoremlist}
+    \theoremitem{Theorem 5.1 - 5.14}
+    {Common languages \& decidabilities}
+    {pg. 216-226}
+    \begin{multicols}{2}
+    \begin{itemize}[nosep]
+        \item $\haltlang{TM}$ is undecidable 
+        \item $\elang{TM}$ is undecidable 
+        \item $\genlang{REGULAR}{TM}$ is undecidable 
+        \item $\eqlang{TM}$ is undecidable
+        \item \textbf{$\alang{LBA}$ is decidable}
+        \item $\elang{LBA}$ is undecidable
+        \item $\alllang{CFG}$ is undecidable
+    \end{itemize}
+    \end{multicols}
+    \theoremitem{Definition 5.5}
+    {Computation history}
+    {pg. 221}
+    \theoremitem{Definition 5.6}
+    {Linear bounded automaton (LBA)}
+    {pg. 221}
+    \theoremitem{Lemma 5.8}
+    {There are exactly $qng^n$ distinct configurations of an LBA with $q$ states, $g$ symbols and tape of length $n$}
+    {pg. 221}
+
+    \color{gray} % not in the syllabus
+    \noteitem{Gray theorems are not in the syllabus}
+    \theoremitem{Theorem 5.15}
+    {$\mathit{PCP}$ is undecidable}
+    {pg. 228}
+    \color{black}
+
+    \theoremitem{Definition 5.17}
+    {Computable function}
+    {pg. 234}
+    \theoremitem{Definition 5.20}
+    {\textbf{Mapping reduction}}
+    {pg. 235}
+    \theoremitem{Theorem 5.22}
+    {If $A\leq_m B$ and $B$ is decidable, then $A$ is decidable}
+    {pg. 236}
+    \theoremitem{Corollary 5.23}
+    {If $A\leq_m B$ and $A$ is undecidable, then $B$ is undecidable}
+    {pg. 236}
+    \theoremitem{Example 5.24}
+    {Reduction from $\atm$ to $\halttm$}
+    {pg. 236}
+    \color{gray}
+    \theoremitem{Example 5.25}
+    {Reduction from $\atm$ to $\mathit{PCP}$}
+    {pg. 237}
+    \color{black}
+    \theoremitem{Example 5.28}
+    {If $A\leq_m B$ and $B$ is recognizable, then $A$ is recognizable}
+    {pg. 237}
+    \theoremitem{Corollary 5.29}
+    {If $A\leq_m B$ and $A$ is unrecognizable, then $B$ is unrecognizable}
+    {pg. 238}
+    \theoremitem{Theorem 5.30}
+    {$\genlang{EQ}{TM}$ is neither recognizable nor co-recognizable}
+    {pg. 238}
+    \theoremitem{Exercise 5.28}
+    {\textbf{Rice's theorem} \textit{(proof on pg. 243)}}
+    {pg. 241}
+
+    \item[]
+    \theoremitem{EXERCISES}
+    {Useful theorems, unproved unless otherwise noted}
+    {pg. 239-244}
+    \begin{itemize}[nosep]
+        \item[] Note: items with an \texttt{A} symbol instead of a $\bullet$ symbol have a proof on page 242-244.
+        \item $\eqlang{CFG}$ is undecidable
+        \item $\eqlang{CFG}$ is co-Turing-recognizable
+        \item[\texttt{A}] $\atm$ is NOT mapping reducible to $\etm$
+        \item[\texttt{A}] $\leq_m$ is a transitive relation
+        \item[\texttt{A}] If $A$ is recognizable and $A\leq_m\overline{A}$, then $A$ is decidable
+        \item $\cbracket{\abracket{M} \where M \text{ is a TM that accepts $w^R$ whenever it accepts $w$}}$ is undecidable
+        \vspace{0.25em}
+        \item The following three languages are undecidable:
+        \begin{footnotesize}
+        {
+            \item[-] \{$\abracket{M,w} \where M$ is a two-tape TM that writes a nonblank symbol on its second tape when it is
+            run on $w$\}
+            \item[-] $\{\abracket{M} \where M$ is a two-tape TM that writes a nonblank symbol on its second tape when it is
+            run on some input\}
+            \item[-] $\{\abracket{M} \where M$ is a single-tape TM that writes a blank symbol over a nonblank symbol when it is
+            run on some input\}
+        }
+        \end{footnotesize}
+        % \vspace{0.25em} % makes a large space for some reason
+        \item $\{\abracket{M} \where M$ has a \textit{useless state}\} is undecidable
+        \item $\{\abracket{M,w} \where M$ attempts to move its head left when it's on the left-most tape cell\} is undecidable
+        \item $\{\abracket{M,w} \where M$ attempts to move its head left at any point when run on $w$\} is decidable
+        \item $BB$ \textit{(busy beaver function)} is not a computable function
+        \color{gray}
+        \item PCP is decidable over the unary alphabet $\Sigma=\cbracket{1}$
+        \item PCP is undecidable over the binary alphabet $\Sigma=\cbracket{0,1}$
+        \item SPCP \textit{(silly PCP)} is decidable
+        \item $\genlang{AMBIG}{CFG}$ is undecidable (hint: reduction from $\mathit{PCP}$)
+        \color{black}
+        \item There exists an undecidable subset of $\cbracket{1}^*$
+        \item $A$ is Turing-recognizable iff $A\leq_m \atm$
+        \item $A$ is decidable iff $A\leq_m 0^* 1^*$
+        \item Let $J=$ \{$w \where$ either $w=0x$ for some $x\in\atm$, or $w=1y$ for some $y\in\natm$\}.
+        Neither $J$ nor $\overline{J}$ is Turing-recognizable
+        \item There exists an undecidable language $B$ where $B\leq_m\overline{B}$
+        \item $\alang{2DFA}$ \textit{(two-headed finite automaton)} is decidable
+        \item $\elang{2DFA}$ is undecidable
+        \item $\alang{2DIM-DFA}$ \textit{(two-dimensional finite automaton)} is undecidable
+        \vspace{0.25em}
+        \item The following three languages are undecidable \textit{(prove using Rice's theorem)}:
+        \begin{itemize}[label=-]
+            \item[\texttt{A}] $\genlang{INFINITE}{TM}=\cbracket{\abracket{M} \where M \text{ is a TM and $L(M)$ is an infinite language}}$
+            \item $\cbracket{\abracket{M} \where M \text{ is a TM and $1011\in L(M)$}}$
+            \item $\alltm=\cbracket{\abracket{M} \where M \text{ is a TM and $L(M)=\Sigma ^*$}}$\}
+            \item $\genlang{OVERLAP}{CFG}=$ \{$\abracket{G,H} \where G$ and $H$ are CFGs where $L(G)\cap L(H) \neq \phi$\}
+            \item $\genlang{PREFIX-FREE}{CFG}=$ \{$\abracket{G} \where G$ is a CFG where $L(G)$ is a prefix-free\}
+        \end{itemize}
+        \item $\genlang{NECESSARY}{CFG}=$ \{$\abracket{G,A} \where A$ is a necessary variable in $G$\} is recognizable and undecidable
+        \item $\genlang{MIN}{CFG}=$ \{$\abracket{G} \where G$ is a minimal CFG\} is recognizable and undecidable
+    \end{itemize}
+
+    \item[]
+    \item[]
+    \textbf{STUDY GUIDE}'s theorems. \textit{Note: page numbers refer to the study guide, not to the book.}
+    \theoremitem{Exercise 3.1}
+    {Proof of Rice's theorem}
+    {pg. 41}
+    \theoremitem{Exercise 3.2}
+    {Each of the two conditions in Rice's theorem is mandatory}
+    {pg. 41}
+    \theoremitem{Exercise 3.5}
+    {In the proof of Theorem 5.9, $(q-2)\cdot n\cdot g^n+1$ steps would suffice}
+    {pg. 42}
+    \theoremitem{Exercise 3.8}
+    {Describe a 2DFA that recognizes $\cbracket{a^n b^n c^n \where n \geq 0}$}
+    {pg. 45}
+    \theoremitem{Exercise 3.15}
+    {Natural number's multiplication is a computable function}
+    {pg. 48}
+\end{theoremlist}
+
+
+
+
+\subsection{Chapter 6 - Advanced Topics in Computability Theory (Skipped)}
+
+\subsection{Chapter 7 - Time Complexity}
+\begin{theoremlist}
+    \theoremitem{Definition 7.1}
+    {Time complexity}
+    {pg. 276}
+    \theoremitem{Theorem 7.8}
+    {Every $t(n)$ time multitape Turing-machine has an \textbf{equivalent} $\mathbf{O(t^2 (n))}$ time single-tape Turing-machine, where $t(n)\geq n$}
+    {pg. 282}
+    \theoremitem{Definition 7.9}
+    {Nondeteministic running time}
+    {pg. 273}
+    \theoremitem{Theorem 7.11}
+    {Every $t(n)$ time nondeterministic single-tape Turing-machine has an \textbf{equivalent} $\mathbf{2^{O(t(n))}}$ time deterministic single-tape Turing-machine, where $t(n)\geq n$}
+    {pg. 284}
+    \theoremitem{Definition 7.12}
+    {$\classp$ class}
+    {pg. 286}
+    \theoremitem{Definition 7.18}
+    {Polynomial time verifier}
+    {pg. 293}
+    \theoremitem{Definition 7.19}
+    {$\classnp$ class}
+    {pg. 294}
+
+    \theoremitem{Theorem 7.14 - 7.25}
+    {Common problems and their classes}
+    {pg. 288-297}
+    \begin{multicols}{2}
+    \begin{itemize}[nosep]
+        \item $\mathit{PATH}\in\classp$
+        \item $\mathit{RELPRIME}\in\classp$
+        \item Every context-free language is in P
+        \item $\mathit{CLIQUE}\in\classnp$
+        \item $\mathit{SUBSET\dash SUM}\in\classnp$
+    \end{itemize}
+    \end{multicols}
+    
+    \theoremitem{Theorem 7.27}
+    {$\mathit{SAT}\in\classp$ iff $\classp=\classnp$}
+    {pg. 300}
+    \theoremitem{Definition 7.28}
+    {Polynomial time computable function}
+    {pg. 300}
+    \theoremitem{Definition 7.29}
+    {\textbf{\textit{Polynomial time reduction}}}
+    {pg. 300}
+    \theoremitem{Theorem 7.31}
+    {If $A\leq_P B$ and $B\in\classp$, then $A\in\classp$}
+    {pg. 301}
+    \theoremitem{Theorem 7.32}
+    {$3\mathit{SAT}$ is polynomial time reducible to $\mathit{CLIQUE}$}
+    {pg. 302}
+    \theoremitem{Definition 7.34}
+    {NP-complete}
+    {pg. 304}
+    \theoremitem{Exercise 7.34}
+    {NP-hard definition}
+    {pg. 326}
+    \theoremitem{Theorem 7.35}
+    {If $B$ is NP-complete and $B\in\classp$, then $\classp=\classnp$}
+    {pg. 304}
+    \theoremitem{Theorem 7.36}
+    {If $B$ is NP-complete and $B\leq_P C$ for $C\in\classnp$, then $C$ is NP-complete}
+    {pg. 304}
+    \theoremitem{Theorem 7.37}
+    {$\mathit{SAT}$ is NP-complete}
+    {pg. 304}
+
+    \theoremitem{Theorem 7.43 - 7.56}
+    {Common NP-complete problems}
+    {pg. 311-320}
+    \begin{multicols}{2}
+    \begin{itemize}[nosep]
+        \item $\mathit{CLIQUE}$
+        \item $\mathit{VERTEX\dash COVER}$
+        \item $\mathit{HAMPATH}$
+        \item $\mathit{UHAMPATH}$
+        \item $\mathit{SUBSET\dash SUM}$
+    \end{itemize}
+    \end{multicols}
+
+    \theoremitem{EXERCISES}
+    {Useful theorems, unproved unless otherwise noted}
+    {pg. 322-330}
+    \begin{itemize}[nosep]
+        \item[] Note: items with an \texttt{A} symbol instead of a $\bullet$ symbol have a proof on page 329.
+        \item P and NP  closure properties \textit{(NP star proof on pg. 329)}
+        \item $\mathit{CONNECTED}=$ \{$\abracket{G} \where G$ is a connected undirected graph\} is in P
+        \item $\mathit{TRIANGLE}=$ \{$\abracket{G} \where G$ contains a 3-clique\} is in P
+        \item $\alllang{DFA}\in\classp$, $\eqlang{DFA}\in\classp$
+        \item $\mathit{ISO}=$ \{$\abracket{G,H} \where G$ and $H$ are isomorphic graphs\} is in NP
+        \item $\mathit{MODEXP}=$ \{$\abracket{a,b,c,p} \where a,b,c,p\in\N^+$ such that $a^b\equiv c\ (\text{mod }p)$\} is in P
+        \item $\mathit{PERM\dash POWER}=$ \{$\abracket{p,q,t} \where p=q^t$ where $p$ and $q$ are permutations on $\cbracket{1,\dots,k}$\} is in P
+        \item $\mathit{UNARY\dash SSUM}\in\classp$ \textit{(definition on pg. 323 ex. 7.17)}
+        \item \textbf{If $\classp=\classnp$}, then every language $A\in\classp$, except $A=\phi$ and $A=\Sigma^*$, is NP-complete
+        \item $\mathit{PRIMES}=$ \{$m \where m$ is a prime number in binary\} is in NP
+        \item Proving that $\mathit{PATH}$ is not NP-complete would prove $\classp\neq\classnp$
+        \item $\mathit{SPATH}\in\classp$, and $\mathit{LPATH}$ is NP-complete \textit{(definitions on pg. 324 ex. 7.21)}
+        \item $\mathit{DOUBLE\dash SAT}=$ \{$\abracket{\phi} \where \phi$ has at least two satisfying assignments\} is NP-complete
+        \item[\texttt{A}] $\mathit{HALF\dash CLIQUE}=$ \{$\abracket{G} \where G$ has a half clique\} is NP-complete
+        \item $\mathit{CNF}_2\in\classp$
+        \item $\mathit{CNF}_3$ is NP-complete
+        \item $\mathit{MAX\dash CUT}=$ \{$\abracket{G,k} \where G$ has a cut of size $k$ or more\} is NP-complete
+        \item $\mathit{3COLOR}=$ \{$\abracket{G} \where G$ is colorable with 3 colors\} is NP-complete
+        \item[\texttt{A}] $\mathit{SOLITAIRE}=$ \{$\abracket{G} \where G$ is a winnable game configuration\} is NP-complete
+        \item \{$\abracket{p} \where p$ is a polynomial in several variables having an integral root\} is \textbf{\textit{NP-hard}}
+        \vspace{0.25em}
+        \item If $\classp=\classnp$, then these problems can be solved in polynomial time:
+        \begin{itemize}[label=-]
+            \item Satisfying a boolean formula
+            \item Factoring integers
+            \item[\texttt{A}] Finding a largest clique in an undirected graph \textit{(proof on pg. 330)}
+        \end{itemize}
+        \item Minimizing DFAs can be done in polynomial time \textit{(Details on pg. 327 ex. 7.42)}
+        \item $\classp\neq\classnp$ implies that NFAs cannot be minimized in polynomial time
+        \item $\mathit{2SAT}=$ \{$\abracket{\phi} \where \phi$ is a satisfiable 2cnf-formula\} $\in\classp$
+        \item $\text{TIME}(f(n))$ contains only the regular languages when $f(n)=o(n\log{n})$
+        \item P is closed under homomorphism iff $\classp=\classnp$
+    \end{itemize}
+
+    \item[]
+    \item[]
+    \textbf{STUDY GUIDE}'s theorems. \textit{Note: page numbers refer to the study guide, not to the book.}
+    \theoremitem{Exercise 4.2}
+    {The problem from ex. 2.6 (does a string derived from a CFG) is in P}
+    {pg. 64}
+    \theoremitem{Example 2}
+    {$\mathit{COMPOSITES}\in\classp$}
+    {pg. 67}
+    \theoremitem{Question}
+    {Switching $\qacc$ with $\qrej$ will NOT make a TM decide the complement}
+    {pg. 69}
+    
+    \theoremitem{Common NP-complete languages}
+    {}
+    {pg. 78-79}
+    \begin{multicols}{2}
+    \begin{itemize}[nosep]
+        \item $\mathit{INDEPENDENT\dash SET}$
+        \item $\mathit{SET\dash COVER}$
+        \item $\mathit{k\dash COLORING}$
+        \item $\mathit{k\dash SET\dash PACKING}$
+    \end{itemize}
+    \end{multicols}
+\end{theoremlist}
+
+
+
+
+
+
+\subsection{Chapter 8 - Space Complexity}
+\begin{theoremlist}
+    \theoremitem{Definition 8.1}
+    {Space complexity}
+    {pg. 331}
+    \theoremitem{\textbf{Savitch's theorem}}
+    { $f(n)\geq\log{n}$ implies NSPACE$(f(n))\subseteq$ SPACE$(f^2(n))$}
+    {pg. 334}
+    \theoremitem{Definition 8.8}
+    {PSPACE-complete (hard)}
+    {pg. 337}
+
+    \theoremitem{Theorem 8.9 - 8.14}
+    {Common PSPACE-complete problems}
+    {pg. 339-348}
+    \begin{multicols}{2}
+    \begin{itemize}[nosep]
+        \item $\mathit{TQBF}$
+        \item $\mathit{FORMULA\dash GAME}$
+        \item $\mathit{GG}$ (ez wp)
+    \end{itemize}
+    \end{multicols}
+    
+    \theoremitem{Definition 8.17}
+    {Classes L and NL}
+    {pg. 349}
+    \theoremitem{Example 8.18}
+    {$\cbracket{0^k 1^k \where k\geq 0}\in\classl$}
+    {pg. 349}
+    \theoremitem{Example 8.19}
+    {$\mathit{PATH}\in\classnl$}
+    {pg. 350}
+    \theoremitem{Definition 8.20}
+    {Configuration of $M$ on $w$}
+    {pg. 350}
+    \theoremitem{Definition 8.21}
+    {Log space transducer}
+    {pg. 352}
+    \theoremitem{Definition 8.22}
+    {NL-complete}
+    {pg. 352}
+    \theoremitem{Theorem 8.23}
+    {If $A\leq_L B$ and $B\in\classl$, then $A\in\classl$}
+    {pg. 352}
+    \theoremitem{Corollary 8.24}
+    {If any NL-complete language is in L, then $\classl=\classnl$}
+    {pg. 353}
+    \theoremitem{Theorem 8.25}
+    {$\mathit{PATH}$ is NL-complete}
+    {pg. 353}
+    \theoremitem{Corollary 8.26}
+    {$\classnl\in\classp$}
+    {pg. 354}
+    \theoremitem{Theorem 8.27}
+    {\textbf{$\classnl=\text{coNL}$}}
+    {pg. 355}
+
+    \theoremitem{EXERCISES}
+    {Useful theorems, unproved unless otherwise noted}
+    {pg. 357-361}
+    \begin{itemize}[nosep]
+        \item[] Note: items with an \texttt{A} symbol instead of a $\bullet$ symbol have a proof on page 361.
+        \item SPACE$(f(n))$ is the same whether we define this class using a single-tape TM or double-tape read-only TM when $f(n)\geq n$
+        \item PSPACE closure properties
+        \item[\texttt{A}] $\alang{DFA}\in\classl$
+        \item Any PSPACE-hard language is also NP-hard
+        \item[\texttt{A}] NL closure properties
+        \item $\eqlang{REX}\in$ PSPACE
+        \item If every NP-hard language is also PSPACE-hard, then PSPACE $=\classnp$
+        \item $\alang{LBA}$ is PSPACE-complete
+        \item The following languages are in L:
+        \begin{itemize}[label=-]
+            \item The language of properly nested parentheses and brackets
+            \item $\mathit{MULT}=$ \{$a\#b\#c \where a,b,c\in\N$ and $a\times b = c$\} 
+            \item $\mathit{ADD}=$ \{$\abracket{x,y,z} \where x,y,z>0$ and $x+y=z$\} 
+            \item $\mathit{PAL\dash ADD}=$ \{$\abracket{x,y} \where x,y>0$ and $x+y$ is a palindrome\} 
+            \item \{$\abracket{G} \where G$ is an undirected graph that contains a simple cycle\} 
+        \end{itemize}
+        \item $\mathit{BIPARTITE}=$ \{$\abracket{G} \where G$ is a bipartite graph\} is in NL
+        \item The following languages are NL-complete:
+        \begin{itemize}[label=-]
+            \item $\mathit{STRONGLY\dash CONNECTED}=$ \{$\abracket{G} \where G$ is a strongly connected graph\}
+            \item $\genlang{BOTH}{NFA}=$\{$\abracket{M_1,M_2} \where M_1,M_2$ are NFAs and $L(M_1)\cap L(M_2)\neq\phi$\}
+            \item $\alang{NFA}\qquad\elang{NFA}\qquad\mathit{2SAT}$
+            \item[\texttt{A}] \{$\abracket{G} \where G$ is a directed graph that contains a directed cycle\}
+        \end{itemize}
+        \item There exists an NL-complete context-free language
+        
+    \end{itemize}
+
+    \item[]
+    \item[]
+    \textbf{STUDY GUIDE}'s theorems. \textit{Note: page numbers refer to the study guide, not to the book.}
+    \theoremitem{Question}
+    {Space complexity of a problem can't be greater than its time complexity}
+    {pg. 97}
+    \theoremitem{Question}
+    {Every PSPACE-hard language is also NP-hard}
+    {pg. 100}
+    \theoremitem{Exercise 5.4}
+    {TM with space complexity $f(n)=o(n)$ and time complexity $2^{O(f(n))}$}
+    {pg. 104}
+    \theoremitem{Exercise 5.8}
+    {If $\classnl\in\classp,$ and $A,B\in\classnl,$ and $B\notin\cbracket{\phi,\Sigma^*}$, then $A\leq_P B$}
+    {pg. 105}
+    \theoremitem{Exercise 5.9}
+    {If $A\leq_L B$ using a log space computable function $f$, then the length of $f(w)$ is at most polynomial in $w$}
+    {pg. 106}
+    \theoremitem{Exercise 5.10}
+    {$\leq_L$ is transitive}
+    {pg. 107}
+    
+\end{theoremlist}
+
+
+
+
+
+
+\subsection{Section 9.1 - Hierarchy Theorems}
+\begin{theoremlist}
+    \theoremitem{Definition 9.1}
+    {\textbf{Space constructible} functions}
+    {pg. 364}
+    \theoremitem{Example 9.2}
+    {$\log_2 n, n\log_2 n, n^2$ are space constructible (at least $O(\log n)$)}
+    {pg. 364}
+    \theoremitem{\textbf{Space hierarchy theorem}}
+    {For any space constructible function $f:\N\rightarrow\N$, a language A exists that is decidable in $O(f(n))$ space but not in $o(f(n))$ space}
+    {pg. 365}
+    \theoremitem{Corollary 9.4}
+    {For any two functions $f_1,f_2:\N\rightarrow\N$ where $f_1(n)=o(f_2(n))$ and $f_2$ is space constructible,
+    SPACE$(f_1(n))\subsetneq$ SPACE$(f_2(n))$}
+    {pg. 367}
+    \theoremitem{Definition 9.8}
+    {\textbf{Time constructible} functions}
+    {pg. 368}
+    \theoremitem{Example 9.9}
+    {$n\log n, n\sqrt{n}, n^2$ and $2^n$ are time constructible (at least $n\log n$)}
+    {pg. 368}
+    \theoremitem{\textbf{Time hierarchy theorem}}
+    {For any time constructible function $t:\N\rightarrow\N$, a language A exists that is decidable in $O(t(n))$ space but not decidable in $o(t(n)/\log t(n))$}
+    {pg. 369}
+    \theoremitem{Corollary 9.11}
+    {For any two functions $t_1,t_2:\N\rightarrow\N$ where $t_1(n)=o(t_2(n)/\log t_2(n))$ and $t_2$ is time constructible,
+    TIME$(t_1(n))\subsetneq$ TIME$(t_2(n))$}
+    {pg. 371}
+    \theoremitem{Corollary 9.12}
+    {For any $1\leq\epsilon_1<\epsilon_2\in\R$, we have TIME$(n^{\epsilon_1})\subsetneq$ TIME$(n^{\epsilon_2})$}
+    {pg. 371}
+    \theoremitem{Corollary 9.13}
+    {$\classp\subsetneq$ EXPTIME}
+    {pg. 371}
+    \theoremitem{Definition 9.14}
+    {\textbf{EXPSPACE-complete}}
+    {pg. 372}
+    \theoremitem{Theorem 9.15}
+    {$\eqlang{REX$\uparrow$}$ is EXPSPACE-complete}
+    {pg. 372}
+
+    \theoremitem{EXERCISES}
+    {Useful theorems, unproved unless otherwise noted}
+    {pg. 389-391}
+    \begin{itemize}[nosep]
+        \item[] Note: items with an \texttt{A} symbol instead of a $\bullet$ symbol have a proof on page 391.
+        \item[\texttt{A}] TIME$(2^n)=$ TIME$(2^{n+1})$
+        \item[\texttt{A}] TIME$(2^n)\subsetneq$ TIME$(2^{2n})$
+        \item[\texttt{A}] NTIME$(n)\subsetneq$ PSPACE
+        \item If NEXPTIME $\neq$ EXPTIME, then P $\neq$ NP \textit{(proof in the study guide)}
+        \item[\texttt{A}] The \textit{pad} function
+        \item $\elang{REX$\uparrow$}$ is in P  
+    \end{itemize}
+\end{theoremlist}
+
+
+\subsection{Chapter 10 - Advanced Topics in Complexity Theory}
+\begin{theoremlist}
+    \theoremitem{Theorem 10.1}
+    {$\mathit{MIN\dash VERTEX\dash COVER}$ approximation algorithm}
+    {pg. 394}
+    \theoremitem{Theorem 10.2}
+    {$\mathit{MAX\dash CUT}$ 2-optimal approximation algorithm)}
+    {pg. 395}
+    \theoremitem{Definition 10.3}
+    {Probabilistic Turing machine}
+    {pg. 396}
+    \theoremitem{Definition 10.4}
+    {\textbf{BPP class}}
+    {pg. 397}
+    \theoremitem{Lemma 10.5}
+    {The error probability $\epsilon$ is valid as long as $\epsilon\in[0,\frac{1}{2})$}
+    {pg. 397}
+    \theoremitem{Theorem 10.6}
+    {If $p$ is prime and $a\in\Z_p^+$, then $a^{p-1}\equiv1$ (mod $p$)}
+    {pg. 399}
+    \theoremitem{Lemma 10.7}
+    {If $p$ is an odd prime number, Pr[$\mathit{PRIME}$ accepts $p$] $=1$}
+    {pg. 401}
+    \theoremitem{Lemma 10.8}
+    {If $p$ is an odd composite number, Pr[$\mathit{PRIME}$ accepts $p$] $\leq 2^{-k}$}
+    {pg. 402}
+    \theoremitem{Theorem 10.9}
+    {$\mathit{PRIMES}\in\mathit{BPP}$}
+    {pg. 403}
+    \theoremitem{Theorem 10.10}
+    {RP class}
+    {pg. 403}
+    \theoremitem{Exercise 10.7}
+    {$\mathit{BPP}\subseteq$ PSPACE}
+    {pg. 441}
+
+    \item[]
+    \item[]
+    \textbf{STUDY GUIDE}'s theorems. \textit{Note: page numbers refer to the study guide, not to the book.}
+    \theoremitem{Problem}
+    {Traveling Salesman Problem (TSP)}
+    {pg. 124}
+    \theoremitem{Problem}
+    {Minimal Steiner Tree}
+    {pg. 124}
+    \theoremitem{Corollary}
+    {TSP has no approximation algorithm unless $\classp=\classnp$}
+    {pg. 126}
+    \theoremitem{Problem}
+    {0/1-Bin Packing}
+    {pg. 105}
+    \theoremitem{Exercise 7.7}
+    {All of the theorems below}
+    {pg. 140-141}
+    \begin{multicols}{2}
+    \begin{itemize}[nosep]
+        \item $\mathit{COMPOSITES}\in$ RP
+        \item $\mathit{PRIMES}\in$ coRP
+        \item RP $\subseteq$ BPP
+        \item coRP $\subseteq$ BPP
+        \item RP $\subseteq$ NP
+    \end{itemize}
+    \end{multicols}
+\end{theoremlist}
+
+\subsection{}
+\begin{center}
+\vspace*{\fill}
+Made by Yehonatan Simian
+\end{center}
+
+% \pagebreak
+
+\subfile{appendix}
+
+\end{document}
